@@ -15,13 +15,22 @@ Tested and working on OSX, but should also work on Linux and Cygwin.
 
 ### Usage
 
-Add #{process_indicators} format string to your existing status-right tmux option.
+1. Add #{process_indicators} format string to your existing status-right tmux option.
+
+The template / text that is shown in the statusbar is configurable.
+It defaults to `#[bold] PROCESS_NAME #[nobold]`. The template needs to be specified per process.
+To specify a template set the appropriate global option in your tmux configuration in the format of:
+`@PROCESS_NAME_process_template`.
+You can use the constant `PROCESS_NAME` if you want to print out the process name in the status line.
 
 Example configuration for showing if mbsync is running:
 
-    set -g @process_indicator 'mbsync'
+    set -g @monitor_process 'mbsync'
+    set -g @mbsync_process_template '#[bold] PROCESS_NAME is running #[nobold]'
 
     set-option -g status-right "#[bg=blue, fg=black] #{process_indicators} "
+
+In this case we set the option `@mbsync_process_template` to set the template solely used to denote if `mbsync` is running.
 
 There is no limit on the number of processes that can be included this way (except from screen real
 estate ;) )
