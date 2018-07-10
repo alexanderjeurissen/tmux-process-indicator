@@ -36,8 +36,8 @@ _tmux_conf_contents() {
 }
 
 process_indicator_list_helper() {
-	# NOTE: read set -g @process_indicator "process_indicator" entries
+	# NOTE: read set -g @monitor_process "process_name" entries
 	_tmux_conf_contents "full" |
-		awk '/^[ \t]*set(-option)? +-g +@process_indicator/ { gsub(/'\''/,""); gsub(/'\"'/,""); print $4 }'
+		awk '/^[ \t]*set(-option)? +-g +@monitor_process/ { gsub(/'\''/,""); gsub(/'\"'/,""); print $4 }'
 }
 
