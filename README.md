@@ -7,7 +7,7 @@ Introduces a new #{process_indicators} format.
 
 This plugin is useful if:
 
-- You run corncobs or scheduled background processes that you want to monitor.
+- You run cronjobs or scheduled background processes that you want to monitor.
 - You want to keep track if essential processes are still running
 
 Tested and working on OSX, but should also work on Linux and Cygwin.
