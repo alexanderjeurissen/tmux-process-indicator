@@ -60,4 +60,4 @@ Reload TMUX environment:
     # type this in terminal
     $ tmux source-file ~/.tmux.conf
 
-`#{world_clock_status}` interpolation should now work.
+`#{process_indicators}` interpolation should now work.
